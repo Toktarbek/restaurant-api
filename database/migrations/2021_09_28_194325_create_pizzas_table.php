@@ -15,7 +15,14 @@ class CreatePizzasTable extends Migration
     {
         Schema::create('pizzas', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('cheese');
+            $table->string('pastry');
+            $table->string('secret_ingredient');
+            $table->unsignedBigInteger('restauran_id');
             $table->timestamps();
+
+            $table->foreign('restauran_id')->references('id')->on('restaurans')->onDelete('cascade');
         });
     }
 
