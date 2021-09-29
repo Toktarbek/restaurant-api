@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr><th>Restauran</th></tr>
+            <tr><th colspan="4">Restauran</th></tr>
             <tr>
                 <th></th>
                 <th></th>
