@@ -1,11 +1,11 @@
 
-<div align="center" width="600">
+<div align="center" style="width:100%;">
     <h1>Restaurans Api</h1>
     <table class="table table-bordered table-striped">
         <thead>
             <tr>
                 <th>URL</th>
-                <th>METHOD</th>
+                <th>Method</th>
                 <th>Тела</th>
                 <th>Описание</th>
             </tr>
