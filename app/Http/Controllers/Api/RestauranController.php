@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+USE Illuminate\Http\Response;
 use App\Models\Restauran;
+use App\Http\Resources\RestauranResource;
+use App\Http\Requests\RestauranStoreRequest;
 
 class RestauranController extends Controller
 {
@@ -15,7 +18,7 @@ class RestauranController extends Controller
      */
     public function index()
     {
-        return Restauran::all();
+        return RestauranResource::collection(Restauran::all());
     }
 
     /**
@@ -24,9 +27,11 @@ class RestauranController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RestauranStoreRequest $request)
     {
-        //
+        $created_restauran = Restauran::create($request->validated());
+
+        return new RestauranResource($created_restauran);
     }
 
     /**
@@ -35,9 +40,9 @@ class RestauranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Restauran $restauran)
     {
-        return Restauran::find($id);
+        return new RestauranResource($restauran);
     }
 
     /**
@@ -47,9 +52,11 @@ class RestauranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RestauranStoreRequest $request, Restauran $restauran)
     {
-        //
+        $restauran->update($request->validated());
+        
+        return new RestauranResource($restauran);
     }
 
     /**
@@ -58,8 +65,10 @@ class RestauranController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Restauran $restauran)
     {
-        //
+        $restauran->delete();
+        
+        return response(null,Response::HTTP_NO_CONTENT);
     }
 }

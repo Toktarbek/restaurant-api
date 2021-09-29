@@ -14,6 +14,13 @@ class PizzaResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return [
+            'id' => $this->id,
+            'name' => $this->name,
+            'cheese' => $this->cheese,
+            'pastry' => $this->pastry,
+            'secret_ingredient' => $this->secret_ingredient,
+            'created_at' => $this->created_at
+        ];
     }
 }

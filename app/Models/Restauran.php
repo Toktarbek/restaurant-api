@@ -8,6 +8,9 @@ use App\Models\Pizza;
 
 class Restauran extends Model
 {
+    use HasFactory;
+    protected $fillable = ['name','address'];
+
     public function pizzas(){
         return $this->hasMany(Pizza::class);
     }
