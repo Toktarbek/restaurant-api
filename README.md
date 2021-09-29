@@ -13,16 +13,34 @@
         <tbody>
             <tr><th colspan="4">Restauran</th></tr>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>/api/restaurans</th>
+                <th>GET</th>
+                <th>нет</th>
+                <th>Получаем всю информацию в таблице ресторана</th>
             </tr>
             <tr>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+                <th>/api/restaurans</th>
+                <th>POST</th>
+                <th>name,address</th>
+                <th>Добавляем информацию в таблицу ресторана</th>
+            </tr>
+            <tr>
+                <th>/api/restaurans/id</th>
+                <th>GET</th>
+                <th>нет</th>
+                <th>Получаем информацию по id</th>
+            </tr>
+            <tr>
+                <th>/api/restaurans/id</th>
+                <th>POST/PUT</th>
+                <th>_method=PUT,name,address</th>
+                <th>Обновить информацию по id</th>
+            </tr>
+            <tr>
+                <th>/api/restaurans/id</th>
+                <th>POST/DELETE</th>
+                <th>_method=DELETE</th>
+                <th>Удалить информацию по id</th>
             </tr>
         </tbody>
     </table>
