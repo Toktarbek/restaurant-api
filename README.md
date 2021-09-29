@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div>
     <h1>Restaurans Api</h1>
     <table class="table table-bordered table-striped">
         <thead>
