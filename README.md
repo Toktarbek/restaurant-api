@@ -1,5 +1,5 @@
 
-<div align="center" width="400">
+<div align="center" width="600">
     <h1>Restaurans Api</h1>
     <table class="table table-bordered table-striped">
         <thead>
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr>Restauran</tr>
+            <tr><th>Restauran</th></tr>
             <tr>
                 <th></th>
                 <th></th>
