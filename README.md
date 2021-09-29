@@ -1,6 +1,31 @@
 
 <div class="container">
-<h1>Restaurans Api</h1>
+    <h1>Restaurans Api</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>METHOD</th>
+                <th>Тела</th>
+                <th>Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            <title>Restauran</title>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </tbody>
+    </table>
 </div>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
