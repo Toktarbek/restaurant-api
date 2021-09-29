@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Restauran;
 
 class RestauranController extends Controller
 {
@@ -14,7 +15,7 @@ class RestauranController extends Controller
      */
     public function index()
     {
-        //
+        return Restauran::all();
     }
 
     /**
@@ -36,7 +37,7 @@ class RestauranController extends Controller
      */
     public function show($id)
     {
-        //
+        return Restauran::find($id);
     }
 
     /**
