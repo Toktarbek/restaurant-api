@@ -8,6 +8,9 @@ use App\Models\Restauran;
 
 class Pizza extends Model
 {
+    use HasFactory;
+    protected $fillable = ['name','cheese','pastry','secret_ingredient','restauran_id'];
+
     public function restauran(){
     	return $this->belongsTo(Restauran::class);
     }

@@ -4,6 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use App\Models\Pizza;
+use App\Http\Resources\PizzaResource;
+use App\Http\Requests\PizzaStoreRequest;
 
 class PizzaController extends Controller
 {
@@ -14,7 +18,7 @@ class PizzaController extends Controller
      */
     public function index()
     {
-        //
+        return PizzaResource::collection(Pizza::all());
     }
 
     /**
@@ -23,9 +27,11 @@ class PizzaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PizzaStoreRequest $request)
     {
-        //
+        $created_pizza = Pizza::create($request->validated());
+
+        return new PizzaResource($created_pizza);
     }
 
     /**
@@ -34,9 +40,9 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Pizza $pizza)
     {
-        //
+        return new PizzaResource($pizza);
     }
 
     /**
@@ -46,9 +52,11 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PizzaStoreRequest $request, Pizza $pizza)
     {
-        //
+        $pizza->update($request->validated());
+
+        return new PizzaResource($pizza);
     }
 
     /**
@@ -57,8 +65,10 @@ class PizzaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pizza $pizza)
     {
-        //
+        $pizza->delete();
+        
+        return response(null,Response::HTTP_NO_CONTENT);
     }
 }

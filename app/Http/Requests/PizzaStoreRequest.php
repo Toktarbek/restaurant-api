@@ -13,7 +13,7 @@ class PizzaStoreRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class PizzaStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|max:128',
+            'cheese' => 'required|max:128',
+            'pastry' => 'required|max:128',
+            'secret_ingredient' => 'required|max:128',
+            'restauran_id' => 'required|exists:restaurans,id'
         ];
     }
 }

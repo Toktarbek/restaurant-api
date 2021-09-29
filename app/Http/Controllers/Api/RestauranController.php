@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-USE Illuminate\Http\Response;
+use Illuminate\Http\Response;
 use App\Models\Restauran;
 use App\Http\Resources\RestauranResource;
 use App\Http\Requests\RestauranStoreRequest;
